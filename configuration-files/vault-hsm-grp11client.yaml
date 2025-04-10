@@ -1,0 +1,40 @@
+iamcredentialtemplate: &defaultiamcredential
+          enabled: false
+          endpoint: "https://iam.cloud.ibm.com"
+
+sessionauthtemplate: &defaultsessionauth
+  enabled: false
+  tokenspaceIDPassword: "12345678"
+
+tokens:
+  0:
+    grep11connection:
+      address: "192.168.122.14"
+      port: "9876"
+      tls:
+        enabled: true
+        mutual: true
+        cacert: "/etc/ep11client/certs/grep11-ca.pem"
+        certfile: "/etc/ep11client/certs/grep11-client.pem"
+        keyfile: "/etc/ep11client/certs/grep11-client.key"
+    storage:
+#      filestore:
+#        enabled: true
+#        storagepath: <GREP11-KeyStore>
+      remotestore:
+        enabled: true
+      # localpostgres:
+      #   enabled: false
+      #   connectionstring:
+    users:
+      0: # SO User
+        name: "SO user"
+      1: # User
+        name: "Normal user"
+        tokenspaceID: "21DCABAA-BEC7-442A-8089-5BD9582CB7EB"
+      2: # Anonymous user
+        name: "Anonymous"
+        tokenspaceID: "B77CB96E-1D40-4530-8AA4-F96DDBEECD04"
+logging:
+  loglevel: "trace"
+  logpath: "/etc/ep11client/pkcs11.log"
