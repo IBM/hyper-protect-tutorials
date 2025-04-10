@@ -36,7 +36,7 @@ HPVS needs a **containerized image** of the workload in question (in this case V
 - Login into s390x Linux VSI, create an empty directory and change into it, this will be you working directory to build the Vault image.
 - Copy the following vault startup script [`vault_script.sh`](configuration-files/vault_script.sh) into this directory, this scripts will create the required configuration files from BASE64 encoded files and start vault.
 - Copy the following [`Containerfile`](configuration-files/Containerfile) that creates a `/vault/data` directory for RAFT, downloads the latest Vault binary for s390x **(be sure to check online and update the link as needed)** and copies the vault_script.sh script to the image (so make sure vault_script.sh is in the same directory)
-- Build the image with the command `podman build . --tag {registry}/{image-name}:{version}` be sure to sub in the registry, image name and version that you'd like to use (see sample output [here](configuration-files/vault-build-sample-output.txt))
+- Build the image with the command `podman build . --tag {registry}/{image-name}:{version}` be sure to sub in the registry, image name and version that you'd like to use (see sample output [here](configuration-files/vault-build-sample-output.txt)).
 - Push the image with command `podman push {registry}/{image-name}:{version}`
 
 ### Step 1.2 - Get Image URL with SHA256SUM
@@ -66,14 +66,14 @@ Start the kube with this command:
 ```
 podman play kube vault.yaml
 ```
-Check the sample output in [vault-podman-play-kube-sample-output](configuration-files/vault-podman-play-kube-sample-output)
+Check the sample output in [vault-podman-play-kube-sample-output](configuration-files/vault-podman-play-kube-sample-output).
 
 Test if the vault image comes up with the following commands:
 ```
 export VAULT_ADDR=http://127.0.0.1:8200/
 ./vault status
 ```
-Check the sample output in [vault-status-sample-output](configuration-files/vault-status-sample-output)
+Check the sample output in [vault-status-sample-output](configuration-files/vault-status-sample-output).
 
 To check the logs, use the command `podman logs {pod ID or container ID}` with the sample output in [vault-podman-log-sample-output](configuration-files/vault-podman-log-sample-output)
 
