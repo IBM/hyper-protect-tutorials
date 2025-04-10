@@ -1,0 +1,72 @@
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault status
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       shamir
+Initialized              true
+Sealed                   true
+Total Recovery Shares    5
+Threshold                3
+Unseal Progress          0/3
+Unseal Nonce             n/a
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Removed From Cluster     false
+HA Enabled               true
+[root@zrhpgp11 vault-tutorial-onprem]# virsh shutdown vault-tutorial-onprem 
+Domain 'vault-tutorial-onprem' is being shutdown
+
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault status
+^C
+[root@zrhpgp11 vault-tutorial-onprem]# virsh start vault-tutorial-onprem --console 
+Domain 'vault-tutorial-onprem' started
+Connected to domain 'vault-tutorial-onprem'
+Escape character is ^] (Ctrl + ])
+# HPL11 build:24.11.0 enabler:24.11.0
+# Thu Mar 20 13:32:05 UTC 2025
+# Machine Type/Plant/Serial: 3931/02/8A3B8
+# delete old root partition...
+# create new root partition...
+# encrypt root partition...
+# create root filesystem...
+# write OS to root disk...
+# decrypt user-data...
+2 token decrypted, 0 encrypted token ignored
+# create attestation data
+# set hostname...
+# finish root disk setup...
+# Thu Mar 20 13:32:26 UTC 2025
+# HPL11 build:24.11.0 enabler:24.11.0
+# HPL11099I: bootloader end
+hpcr-dnslookup[987]: HPL14000I: Network connectivity check completed successfully.
+hpcr-logging[1017]: Configuring logging ...
+hpcr-logging[1029]: Version [1.1.184]
+hpcr-logging[1029]: Configuring logging, input [/var/hyperprotect/user-data.decrypted] ...
+hpcr-logging[1029]: HPL01010I: Logging has been setup successfully.
+hpcr-logging[1017]: Logging has been configured
+hpcr-catch-success[1821]: VSI has started successfully.
+hpcr-catch-success[1821]: HPL10001I: Services succeeded -> systemd triggered hpl-catch-success service
+
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault status
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       shamir
+Initialized              true
+Sealed                   false
+Total Recovery Shares    5
+Threshold                3
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Cluster Name             vault-cluster-c8c01c44
+Cluster ID               bcdf2373-95e7-3170-10d6-c45a5997b082
+Removed From Cluster     false
+HA Enabled               true
+HA Cluster               https://127.0.0.1:8201/
+HA Mode                  active
+Active Since             2025-03-20T13:33:07.34429041Z
+Raft Committed Index     179579
+Raft Applied Index       179579
+Last WAL                 68842
