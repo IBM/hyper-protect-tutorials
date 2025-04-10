@@ -1,0 +1,32 @@
+FROM s390x/debian:stable-slim
+
+# Setup pre-reqs
+RUN apt update && apt -y upgrade
+RUN apt -y install wget unzip 
+
+# PKCS11 Setup
+RUN mkdir -p /etc/ep11client/certs
+WORKDIR /etc/ep11client
+# Download pcks11 library, go to https://github.com/IBM-Cloud/hpcs-pkcs11/releases, 
+# select the latest version and copy the download link for the s390x
+# platform and use below:
+RUN wget -q https://github.com/IBM-Cloud/hpcs-pkcs11/releases/download/v2.6.8/pkcs11-grep11-s390x.so.2.6.8
+RUN chmod +x pkcs11-grep11-s390x.so.2.6.8
+RUN cp pkcs11-grep11-s390x.so.2.6.8 /usr/local/lib
+
+# Vault Setup
+RUN mkdir -p /vault/data
+WORKDIR /vault
+
+# Download vault, go to https://releases.hashicorp.com/vault/, 
+# select the latest +ent.hsm version and copy the download link for the s390x
+# platform and use below:
+RUN wget -q https://releases.hashicorp.com/vault/1.19.1+ent.hsm/vault_1.19.1+ent.hsm_linux_s390x.zip
+RUN unzip vault_1.19.1+ent.hsm_linux_s390x.zip
+
+COPY vault_script.sh vault_script.sh
+RUN chmod +x vault_script.sh
+
+EXPOSE 8200
+
+CMD ["/vault/vault_script.sh"]

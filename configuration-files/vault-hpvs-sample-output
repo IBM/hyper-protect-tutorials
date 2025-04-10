@@ -1,0 +1,64 @@
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             false
+Sealed                  true
+Total Shares            0
+Threshold               0
+Unseal Progress         0/0
+Unseal Nonce            n/a
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Removed From Cluster    false
+HA Enabled              true
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator init
+Unseal Key 1: E7Jnfg9/qveHVGbU4o7KfEGKr/aw7fen7c9mNg5aNUcN
+Unseal Key 2: FfBR5LvlvE9lR14oOMp66pU83T02zW/t2moA+mGx0YMY
+Unseal Key 3: vUt1p2xapfszbxAnXlfdv4LY5rbit/MOm/akzRKdF523
+Unseal Key 4: WMz9N2p9/mRSHQEA+EjIhoK8EKUV12+sfXCAmB0EAiCS
+Unseal Key 5: qTyuzB4EutXfe+VM0IALeoadSDN0KVvNjU+rmJtSWnWw
+
+Initial Root Token: hvs.ijLKALyVbMPJTx2soGdwReNk
+
+Vault initialized with 5 key shares and a key threshold of 3. Please securely
+distribute the key shares printed above. When the Vault is re-sealed,
+restarted, or stopped, you must supply at least 3 of these keys to unseal it
+before it can start servicing requests.
+
+Vault does not store the generated root key. Without at least 3 keys to
+reconstruct the root key, Vault will remain permanently sealed!
+
+It is possible to generate new unseal keys, provided you have a quorum of
+existing unseal keys shares. See "vault operator rekey" for more information.
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault status
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             true
+Sealed                  true
+Total Shares            5
+Threshold               3
+Unseal Progress         0/3
+Unseal Nonce            n/a
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Removed From Cluster    false
+HA Enabled              true
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator unseal
+Unseal Key (will be hidden): 
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             true
+Sealed                  true
+Total Shares            5
+Threshold               3
+Unseal Progress         1/3
+Unseal Nonce            de78f014-a482-5c9a-ed06-cbf63f754cb6
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Removed From Cluster    false
+HA Enabled              true

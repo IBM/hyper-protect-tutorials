@@ -1,0 +1,36 @@
+Unseal Key (will be hidden): 
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             true
+Sealed                  true
+Total Shares            5
+Threshold               3
+Unseal Progress         2/3
+Unseal Nonce            de78f014-a482-5c9a-ed06-cbf63f754cb6
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Removed From Cluster    false
+HA Enabled              true
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator unseal
+Unseal Key (will be hidden): 
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             true
+Sealed                  false
+Total Shares            5
+Threshold               3
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Cluster Name            vault-cluster-e423fdac
+Cluster ID              fd67f29a-6ed9-d622-7cd4-b32c366ed8b2
+Removed From Cluster    false
+HA Enabled              true
+HA Cluster              n/a
+HA Mode                 standby
+Active Node Address     <none>
+Raft Committed Index    58
+Raft Applied Index      58

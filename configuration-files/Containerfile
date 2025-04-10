@@ -1,0 +1,19 @@
+FROM s390x/debian:stable-slim
+
+# Setup pre-reqs
+RUN apt update && apt -y upgrade
+RUN apt -y install wget unzip 
+
+# Download vault, go to https://releases.hashicorp.com/vault/, 
+# select the latest +ent version and copy the download link for the s390x
+# platform and use below:
+RUN mkdir -p /vault/data
+WORKDIR /vault
+RUN wget -q https://releases.hashicorp.com/vault/1.19.0+ent/vault_1.19.0+ent_linux_s390x.zip
+RUN unzip vault_1.19.0+ent_linux_s390x.zip
+COPY vault_script.sh vault_script.sh
+RUN chmod +x vault_script.sh
+
+EXPOSE 8200
+
+CMD ["/vault/vault_script.sh"]
