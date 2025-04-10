@@ -1,0 +1,55 @@
+type: workload
+play:
+  templates:
+    - apiVersion: v1
+      kind: Pod
+      metadata:
+        name: zcatvault
+      spec:
+        securityContext:
+          privileged: false
+        containers:
+        - name: zcatvault
+          image: us.icr.io/zcat-hashicorp/vault-ent-hsm@sha256:98b687a88144fad7c9bd1d2a7bb6ab83358123759f6f5827d2ece5050fb6aeb0
+          securityContext:
+            privileged: false
+          volumeMounts:
+          - name: vault-data
+            mountPath: /vault/data
+          - name: attestation
+            readOnly: true
+            mountPath: /var/hyperprotect:Z,U
+          env:
+          - name: grep11
+            value: aWFtY...
+          - name: ca
+            value: LS0tL...
+          - name: client
+            value: LS0tL...
+          - name: key
+            value: LS0tL...
+          - name: conf
+            value: dWkg...
+          - name: license
+            value: MDJNV...
+          ports:
+          - containerPort: 8200
+            hostPort: 8200
+        volumes:
+        - name: vault-data
+          hostPath:
+            path: /mnt/data
+            type: DirectoryOrCreate
+        - name: attestation
+          hostPath:
+            path: /var/hyperprotect
+            type: Directory
+        restartPolicy: Never
+volumes:
+  test:
+    mount: "/mnt/data"
+    seed: "testing"
+auths:
+  us.icr.io:
+    password: ****
+    username: iamapikey
