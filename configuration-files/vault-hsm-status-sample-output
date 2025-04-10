@@ -1,0 +1,50 @@
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       n/a
+Initialized              false
+Sealed                   true
+Total Recovery Shares    0
+Threshold                0
+Unseal Progress          0/0
+Unseal Nonce             n/a
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Removed From Cluster     false
+HA Enabled               true
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator init
+Recovery Key 1: qw3cFT+FZhmJWlO84wbLQuWAcsX/FRH96Xfiy0FYdunD
+Recovery Key 2: 2eMCBGXFo60rRoGOw1/Tny2CyIB7ktSLTbhlqvfxcxMG
+Recovery Key 3: s1Cn2LSFy6Ix8cw7yZyPtrTBssxz+TGlFWha3qQXlDDW
+Recovery Key 4: rbEfBMVq5DboCNni4ykbmB94yUUlgCPGKBuYluiHuMJ1
+Recovery Key 5: ngtmQaV6Kr82nmjJdYYPmnCdDbTmu7MgaNWECj88HAjA
+
+Initial Root Token: hvs.PniWzjqonUqK3q6wQkfUdTKB
+
+Success! Vault is initialized
+
+Recovery key initialized with 5 key shares and a key threshold of 3. Please
+securely distribute the key shares printed above.
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault status
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       shamir
+Initialized              true
+Sealed                   false
+Total Recovery Shares    5
+Threshold                3
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Cluster Name             vault-cluster-c8c01c44
+Cluster ID               bcdf2373-95e7-3170-10d6-c45a5997b082
+Removed From Cluster     false
+HA Enabled               true
+HA Cluster               https://127.0.0.1:8201/
+HA Mode                  active
+Active Since             2025-03-19T18:18:53.625686455Z
+Raft Committed Index     174
+Raft Applied Index       174
+Last WAL                 63

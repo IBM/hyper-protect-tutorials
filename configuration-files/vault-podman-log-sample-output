@@ -1,0 +1,124 @@
+WARNING: Request Limiter configuration is no longer supported; overriding server configuration to disable
+
+==> Vault server configuration:
+
+Administrative Namespace: 
+             Api Address: http://0.0.0.0:8200
+                     Cgo: disabled
+         Cluster Address: https://127.0.0.1:8201
+   Environment Variables: HOME, HOSTNAME, PATH, PWD, SHLVL, conf, container, license
+              Go Version: go1.23.6
+              Listener 1: tcp (addr: "0.0.0.0:8200", cluster address: "0.0.0.0:8201", disable_request_limiter: "false", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+               Log Level: 
+                   Mlock: supported: true, enabled: false
+           Recovery Mode: false
+                 Storage: raft (HA available)
+                 Version: Vault v1.19.0+ent, built 2025-03-04T12:36:26Z
+             Version Sha: 838f2be3861a749e52d97bbacf275a472bec8ccb
+
+==> Vault server started! Log data will stream in below:
+
+2025-03-13T15:24:18.933Z [INFO]  proxy environment: http_proxy="" https_proxy="" no_proxy=""
+2025-03-13T15:24:18.937Z [INFO]  incrementing seal generation: generation=1
+2025-03-13T15:24:18.940Z [INFO]  core: using autoloaded license: license="{\"license_id\":\"07cd369b-bb50-e993-d6bb-e0f54d4f4be6\",\"customer_id\":\"e99ff6f3-b823-dfb3-c514-06f16668de76\",\"installation_id\":\"*\",\"issue_time\":\"2025-01-28T14:50:58.185093991Z\",\"start_time\":\"2025-01-28T00:00:00Z\",\"expiration_time\":\"2025-04-30T00:00:00Z\",\"termination_time\":\"2025-05-31T00:00:00Z\",\"flags\":{\"modules\":[\"multi-dc-scale\",\"governance-policy\",\"advanced-data-protection-key-management\",\"advanced-data-protection-transform\"]},\"features\":[\"HSM\",\"Performance Replication\",\"DR Replication\",\"MFA\",\"Sentinel\",\"Seal Wrapping\",\"Control Groups\",\"Performance Standby\",\"Namespaces\",\"KMIP\",\"Entropy Augmentation\",\"Transform Secrets Engine\",\"Lease Count Quotas\",\"Key Management Secrets Engine\",\"Automated Snapshots\",\"Key Management Transparent Data Encryption\",\"Secrets Sync\"],\"performance_standby_count\":9999}"
+2025-03-13T15:24:18.940Z [INFO]  replication.wal.aop: starting write controller: interval=10ms history_weight=0.99 target_queue_len_batches=5 Kp, Ki, Kd="0.010000,1.000000,0.000000"
+2025-03-13T15:24:18.940Z [INFO]  core: Initializing version history cache for core
+2025-03-13T15:24:18.940Z [INFO]  events: Starting event system
+2025-03-13T15:31:47.877Z [INFO]  core: security barrier not initialized
+2025-03-13T15:31:47.877Z [INFO]  core: seal configuration missing, not initialized
+2025-03-13T15:31:55.028Z [INFO]  core: security barrier not initialized
+2025-03-13T15:31:55.028Z [INFO]  core: seal configuration missing, not initialized
+2025-03-13T15:31:55.029Z [INFO]  core: security barrier not initialized
+2025-03-13T15:31:55.030Z [INFO]  storage.raft: creating Raft: config="&raft.Config{ProtocolVersion:3, HeartbeatTimeout:5000000000, ElectionTimeout:5000000000, CommitTimeout:50000000, MaxAppendEntries:64, BatchApplyCh:true, ShutdownOnRemove:true, TrailingLogs:0x2800, SnapshotInterval:120000000000, SnapshotThreshold:0x2000, LeaderLeaseTimeout:2500000000, LocalID:\"6f559abe-a8c6-0264-b654-1bf402ca04cb\", NotifyCh:(chan<- bool)(0xc00439e000), LogOutput:io.Writer(nil), LogLevel:\"DEBUG\", Logger:(*hclog.interceptLogger)(0xc001fe4e70), NoSnapshotRestoreOnStart:true, PreVoteDisabled:false, skipStartup:false}"
+2025-03-13T15:31:55.030Z [INFO]  storage.raft: initial configuration: index=1 servers="[{Suffrage:Voter ID:6f559abe-a8c6-0264-b654-1bf402ca04cb Address:0.0.0.0:8201}]"
+2025-03-13T15:31:55.030Z [INFO]  storage.raft: entering follower state: follower="Node at 6f559abe-a8c6-0264-b654-1bf402ca04cb [Follower]" leader-address= leader-id=
+2025-03-13T15:32:04.122Z [WARN]  storage.raft: heartbeat timeout reached, starting election: last-leader-addr= last-leader-id=
+2025-03-13T15:32:04.122Z [INFO]  storage.raft: entering candidate state: node="Node at 6f559abe-a8c6-0264-b654-1bf402ca04cb [Candidate]" term=2
+2025-03-13T15:32:04.122Z [INFO]  storage.raft: pre-vote successful, starting election: term=2 tally=1 refused=0 votesNeeded=1
+2025-03-13T15:32:04.124Z [INFO]  storage.raft: election won: term=2 tally=1
+2025-03-13T15:32:04.124Z [INFO]  storage.raft: entering leader state: leader="Node at 6f559abe-a8c6-0264-b654-1bf402ca04cb [Leader]"
+2025-03-13T15:32:04.134Z [INFO]  core: security barrier initialized: stored=1 shares=5 threshold=3
+2025-03-13T15:32:04.149Z [INFO]  core: post-unseal setup starting
+2025-03-13T15:32:04.149Z [INFO]  replication.wal: no log directories found: root=wal/logs/
+2025-03-13T15:32:04.151Z [INFO]  replication.index.perf: no index pages found
+2025-03-13T15:32:04.151Z [INFO]  replication.index.perf: no checkpoint found
+2025-03-13T15:32:04.151Z [INFO]  replication.index: no previous commit, forcing re-index: path-type=1
+2025-03-13T15:32:04.153Z [INFO]  replication.index.local: no index pages found
+2025-03-13T15:32:04.153Z [INFO]  replication.index.local: no checkpoint found
+2025-03-13T15:32:04.153Z [INFO]  replication.index: no previous commit, forcing re-index: path-type=2
+2025-03-13T15:32:04.154Z [INFO]  licensing: stored license removal was successful
+2025-03-13T15:32:04.159Z [INFO]  core: loaded wrapping token key
+2025-03-13T15:32:04.159Z [INFO]  core: successfully setup plugin runtime catalog
+2025-03-13T15:32:04.159Z [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+2025-03-13T15:32:04.159Z [INFO]  core: no mounts; adding default mount table
+2025-03-13T15:32:04.163Z [INFO]  core: successfully mounted: type=cubbyhole version="v1.19.0+builtin.vault" path=cubbyhole/ namespace="ID: root. Path: "
+2025-03-13T15:32:04.164Z [INFO]  core: successfully mounted: type=system version="v1.19.0+builtin.vault" path=sys/ namespace="ID: root. Path: "
+2025-03-13T15:32:04.164Z [INFO]  core: successfully mounted: type=identity version="v1.19.0+builtin.vault" path=identity/ namespace="ID: root. Path: "
+2025-03-13T15:32:04.174Z [INFO]  core: successfully mounted: type=token version="v1.19.0+builtin.vault" path=token/ namespace="ID: root. Path: "
+2025-03-13T15:32:04.177Z [INFO]  rollback: Starting the rollback manager with 256 workers
+2025-03-13T15:32:04.177Z [INFO]  rollback: starting rollback manager
+2025-03-13T15:32:04.177Z [INFO]  core: restoring leases
+2025-03-13T15:32:04.177Z [INFO]  rotation-job-manager: starting rotation manager
+2025-03-13T15:32:04.177Z [INFO]  expiration: lease restore complete
+2025-03-13T15:32:04.180Z [INFO]  identity: entities restored
+2025-03-13T15:32:04.180Z [INFO]  identity: groups restored
+2025-03-13T15:32:04.180Z [INFO]  system.mfa: configurations restored
+2025-03-13T15:32:04.182Z [INFO]  core: stopping replication
+2025-03-13T15:32:04.182Z [INFO]  core: closed sync connection
+2025-03-13T15:32:04.182Z [INFO]  core: replication stopped
+2025-03-13T15:32:04.182Z [INFO]  core: setting up replication
+2025-03-13T15:32:04.182Z [ERROR] core: a merkle tree reindex is required before replication can be started
+2025-03-13T15:32:04.182Z [INFO]  core: running replication reindexing: diff=false force=false toggle replication=false no flush=false trees=2
+2025-03-13T15:32:04.186Z [INFO]  replication.index.reindex: set starting WAL: value=15
+2025-03-13T15:32:04.224Z [INFO]  replication.index.reindex: starting storage scan
+2025-03-13T15:32:04.224Z [INFO]  replication.index.reindex: key scanning complete: num_keys=19
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: performing first replay: lastWAL=18
+2025-03-13T15:32:04.225Z [INFO]  replication.wal: prepared to replay logs: diff=3 commit_index=15 last_index=18
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: locking tree
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: locked tree
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: performing second replay: lastWAL=18
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: committing trees
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: root hash mis-match
+2025-03-13T15:32:04.225Z [INFO]  replication.index.reindex: reindexing subtree: tree=1
+2025-03-13T15:32:04.225Z [INFO]  replication.index.perf.reindex.subtree: locking subtree
+2025-03-13T15:32:04.225Z [INFO]  replication.index.perf.reindex.subtree: locked subtree
+2025-03-13T15:32:04.225Z [INFO]  replication.index.perf.reindex.subtree: subtree root hash mis-match
+2025-03-13T15:32:04.226Z [INFO]  replication.index.perf.reindex.subtree: reindexed subtree page, page diverged: page=15
+2025-03-13T15:32:04.255Z [INFO]  replication.index.reindex: done reindexing subtree: bad pages=1 tree=1
+2025-03-13T15:32:04.255Z [INFO]  replication.index.reindex: reindexing subtree: tree=2
+2025-03-13T15:32:04.255Z [INFO]  replication.index.local.reindex.subtree: locking subtree
+2025-03-13T15:32:04.255Z [INFO]  replication.index.local.reindex.subtree: locked subtree
+2025-03-13T15:32:04.279Z [INFO]  replication.index.reindex: done reindexing subtree: bad pages=0 tree=2
+2025-03-13T15:32:04.279Z [INFO]  replication.index.perf: flushing all currently dirty pages: until_wal=18
+2025-03-13T15:32:04.293Z [INFO]  replication.index.reindex: deleting reindex WAL: tree=1
+2025-03-13T15:32:04.294Z [INFO]  replication.index.reindex: deleting reindex WAL: tree=2
+2025-03-13T15:32:04.297Z [INFO]  core: replication reindex complete: fixed_pages=1
+2025-03-13T15:32:04.299Z [INFO]  core: replicated cluster information not found or disabled, not activating client
+2025-03-13T15:32:04.299Z [INFO]  core: replication setup finished
+2025-03-13T15:32:04.299Z [INFO]  core: usage gauge collection is disabled
+2025-03-13T15:32:04.301Z [INFO]  core: Recorded vault version: vault version=1.19.0 upgrade time="2025-03-13 15:32:04.299721103 +0000 UTC" build date=2025-03-04T12:36:26Z
+2025-03-13T15:32:04.305Z [INFO]  core: post-unseal setup complete
+2025-03-13T15:32:04.310Z [INFO]  core: root token generated
+2025-03-13T15:32:04.314Z [INFO]  core: pre-seal teardown starting
+2025-03-13T15:32:04.314Z [INFO]  core: stopping raft active node
+2025-03-13T15:32:04.314Z [INFO]  core: stopping replication
+2025-03-13T15:32:04.314Z [INFO]  core: closed sync connection
+2025-03-13T15:32:04.314Z [INFO]  core: replication stopped
+2025-03-13T15:32:04.314Z [INFO]  core: shutting down census manager
+2025-03-13T15:32:04.314Z [INFO]  rollback: stopping rollback manager
+2025-03-13T15:32:04.314Z [INFO]  core: pre-seal teardown complete
+[root@zrhpkoso ~]# ./vault status
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             true
+Sealed                  true
+Total Shares            5
+Threshold               3
+Unseal Progress         0/3
+Unseal Nonce            n/a
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Removed From Cluster    false
+HA Enabled              true

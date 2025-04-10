@@ -1,0 +1,35 @@
+Pod:
+685c1cbe463df8d99a59c7a3a096bc5c5fb6c9e375c0832e045f3a23476102c2
+Container:
+4f73415cc88d4ef9b13b1aa99360ff95b00439fae5fc9c153787fd50c2f884c7
+
+```
+Logs (with `podman logs 4f73415cc88d4ef9b13b1aa99360ff95b00439fae5fc9c153787fd50c2f884c7`) look good:
+```
+[root@zrhpkoso ~]# podman logs 4f73415cc88d4ef9b13b1aa99360ff95b00439fae5fc9c153787fd50c2f884c7
+WARNING: Request Limiter configuration is no longer supported; overriding server configuration to disable
+
+==> Vault server configuration:
+
+Administrative Namespace: 
+             Api Address: http://0.0.0.0:8200
+                     Cgo: disabled
+         Cluster Address: https://127.0.0.1:8201
+   Environment Variables: HOME, HOSTNAME, PATH, PWD, SHLVL, conf, container, license
+              Go Version: go1.23.6
+              Listener 1: tcp (addr: "0.0.0.0:8200", cluster address: "0.0.0.0:8201", disable_request_limiter: "false", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+               Log Level: 
+                   Mlock: supported: true, enabled: false
+           Recovery Mode: false
+                 Storage: raft (HA available)
+                 Version: Vault v1.19.0+ent, built 2025-03-04T12:36:26Z
+             Version Sha: 838f2be3861a749e52d97bbacf275a472bec8ccb
+
+==> Vault server started! Log data will stream in below:
+
+2025-03-13T15:24:18.933Z [INFO]  proxy environment: http_proxy="" https_proxy="" no_proxy=""
+2025-03-13T15:24:18.937Z [INFO]  incrementing seal generation: generation=1
+2025-03-13T15:24:18.940Z [INFO]  core: using autoloaded license: license="{\"license_id\":\"07cd369b-bb50-e993-d6bb-e0f54d4f4be6\",\"customer_id\":\"e99ff6f3-b823-dfb3-c514-06f16668de76\",\"installation_id\":\"*\",\"issue_time\":\"2025-01-28T14:50:58.185093991Z\",\"start_time\":\"2025-01-28T00:00:00Z\",\"expiration_time\":\"2025-04-30T00:00:00Z\",\"termination_time\":\"2025-05-31T00:00:00Z\",\"flags\":{\"modules\":[\"multi-dc-scale\",\"governance-policy\",\"advanced-data-protection-key-management\",\"advanced-data-protection-transform\"]},\"features\":[\"HSM\",\"Performance Replication\",\"DR Replication\",\"MFA\",\"Sentinel\",\"Seal Wrapping\",\"Control Groups\",\"Performance Standby\",\"Namespaces\",\"KMIP\",\"Entropy Augmentation\",\"Transform Secrets Engine\",\"Lease Count Quotas\",\"Key Management Secrets Engine\",\"Automated Snapshots\",\"Key Management Transparent Data Encryption\",\"Secrets Sync\"],\"performance_standby_count\":9999}"
+2025-03-13T15:24:18.940Z [INFO]  replication.wal.aop: starting write controller: interval=10ms history_weight=0.99 target_queue_len_batches=5 Kp, Ki, Kd="0.010000,1.000000,0.000000"
+2025-03-13T15:24:18.940Z [INFO]  core: Initializing version history cache for core
+2025-03-13T15:24:18.940Z [INFO]  events: Starting event system

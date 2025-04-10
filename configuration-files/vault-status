@@ -1,0 +1,33 @@
+Key                     Value
+---                     -----
+Seal Type               shamir
+Initialized             false
+Sealed                  true
+Total Shares            0
+Threshold               0
+Unseal Progress         0/0
+Unseal Nonce            n/a
+Version                 1.19.0+ent
+Build Date              2025-03-04T12:36:26Z
+Storage Type            raft
+Removed From Cluster    false
+HA Enabled              true
+[root@zrhpkoso ~]# ./vault operator init
+Unseal Key 1: LZq7H5Qh059LPf/xyMjZzCBw9Oh3ypyN6S1/jnl8e4oY
+Unseal Key 2: WzUneBdYTkYU6uepeAq15S3OGkKVznxtlm+1i+79FRba
+Unseal Key 3: YURN02gGXZ1tonEoMsLLqknNDUrb1N7spXPt2flPQiNK
+Unseal Key 4: urpclwoaiymtjgK2VwFIQvbBe4PjfHqMxD5EiP3QeoMT
+Unseal Key 5: rmh4T9J4itj2w1oYelbcfbEQ0xbPH8S81Uzg6ND1Gb2b
+
+Initial Root Token: hvs.MUYrCkuJiBWOLDHjoq2JAeGt
+
+Vault initialized with 5 key shares and a key threshold of 3. Please securely
+distribute the key shares printed above. When the Vault is re-sealed,
+restarted, or stopped, you must supply at least 3 of these keys to unseal it
+before it can start servicing requests.
+
+Vault does not store the generated root key. Without at least 3 keys to
+reconstruct the root key, Vault will remain permanently sealed!
+
+It is possible to generate new unseal keys, provided you have a quorum of
+existing unseal keys shares. See "vault operator rekey" for more information.
