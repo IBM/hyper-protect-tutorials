@@ -35,7 +35,7 @@ HPVS needs a **containerized image** of the workload in question (in this case V
 ### Step 1.1 - Create and Push the Image
 - Login into s390x Linux VSI, create an empty directory and change into it, this will be you working directory to build the Vault image.
 - Copy the following vault startup script [`vault_script.sh`](configuration-files/vault_script.sh) into this directory, this scripts will create the required configuration files from BASE64 encoded files and start vault.
-- Copy the following [`Containerfile`](configuration-files/Containerfile) that creates a `/vault/data` directory for RAFT, downloads the latest Vault binary for s390x **(be sure to check online and update the link as needed)** and copies the vault_script.sh script to the image (so make sure vault_script.sh is in the same directory)
+- Copy the following [`Containerfile`](configuration-files/Containerfile) that creates a `/vault/data` directory for RAFT, downloads the latest Vault binary for s390x and copies the vault_script.sh script to the image (so make sure vault_script.sh is in the same directory)
 - Build the image with the command `podman build . --tag {registry}/{image-name}:{version}` be sure to sub in the registry, image name and version that you'd like to use (see sample output [here](configuration-files/vault-build-sample-output.txt)).
 - Push the image with command `podman push {registry}/{image-name}:{version}`
 
