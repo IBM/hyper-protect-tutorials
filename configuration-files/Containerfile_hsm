@@ -2,7 +2,7 @@ FROM s390x/debian:stable-slim
 
 # Setup pre-reqs
 RUN apt update && apt -y upgrade
-RUN apt -y install wget unzip 
+RUN apt -y install wget unzip curl jq
 
 # PKCS11 Setup
 RUN mkdir -p /etc/ep11client/certs
@@ -18,11 +18,9 @@ RUN cp pkcs11-grep11-s390x.so.2.6.8 /usr/local/lib
 RUN mkdir -p /vault/data
 WORKDIR /vault
 
-# Download vault, go to https://releases.hashicorp.com/vault/, 
-# select the latest +ent.hsm version and copy the download link for the s390x
-# platform and use below:
-RUN wget -q https://releases.hashicorp.com/vault/1.19.1+ent.hsm/vault_1.19.1+ent.hsm_linux_s390x.zip
-RUN unzip vault_1.19.1+ent.hsm_linux_s390x.zip
+# Download vault 
+RUN wget -q `curl -X GET -s -G --data-urlencode "license_class=enterprise" --data-urlencode "limit=20" https://api.releases.hashicorp.com/v1/releases/vault | jq -r '[.[] | select(.version|test("ent.hsm$"))|.version] | sort | last as $url | "https://releases.hashicorp.com/vault/\($url)/vault_\($url)_linux_s390x.zip"'`
+RUN unzip `curl -X GET -s -G --data-urlencode "license_class=enterprise" --data-urlencode "limit=20" https://api.releases.hashicorp.com/v1/releases/vault | jq -r '[.[] | select(.version|test("ent.hsm$"))|.version] | sort | last as $url | "vault_\($url)_linux_s390x.zip"'`
 
 COPY vault_script.sh vault_script.sh
 RUN chmod +x vault_script.sh
