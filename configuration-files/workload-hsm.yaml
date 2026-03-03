@@ -1,0 +1,48 @@
+type: workload
+play:
+  templates:
+    - apiVersion: v1
+      kind: Pod
+      metadata:
+        name: zcatvault
+      spec:
+        securityContext:
+          privileged: false
+        containers:
+        - name: {Prefix}vault
+          image: {registry}/{image-name}@sha256:{sha256sum-chars}
+          securityContext:
+            privileged: false
+          volumeMounts:
+          - name: vault-data
+            mountPath: /vault/data
+          env:
+          - name: grep11
+            value: {BASE64 of grep11client.yaml}
+          - name: ca
+            value: {BASE64 of grep11-ca.pem}
+          - name: client
+            value: {BASE64 of grep11-client.pem}
+          - name: key
+            value: {BASE64 of grep11-client.key}
+          - name: conf
+            value: {BASE64 of vault-conf.hcl}
+          - name: license
+            value: {BASE64 of license}
+          ports:
+          - containerPort: 8200
+            hostPort: 8200
+        volumes:
+        - name: vault-data
+          hostPath:
+            path: /mnt/data
+            type: DirectoryOrCreate
+        restartPolicy: Never
+volumes:
+  test:
+    mount: "/mnt/data"
+    seed: "testing"
+auths:
+  {registry}:
+    password: {Registry-Password}
+    username: {Registry-User}

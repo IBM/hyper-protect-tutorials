@@ -1,0 +1,40 @@
+type: workload
+play:
+  templates:
+    - apiVersion: v1
+      kind: Pod
+      metadata:
+        name: zcatvault
+      spec:
+        securityContext:
+          privileged: false
+        containers:
+        - name: {Prefix}vault
+          image: {registry}/{image-name}@sha256:{sha256sum-chars}
+          securityContext:
+            privileged: false
+          volumeMounts:
+          - name: vault-data
+            mountPath: /vault/data
+          env:
+          - name: conf
+            value: dWkgICAgICAgICAgICA9IHRydWUKY2x1c3Rlcl9hZGRyICA9ICJodHRwOi8vMTI3LjAuMC4xOjgyMDEiCmFwaV9hZGRyICAgICAgPSAiaHR0cDovLzAuMC4wLjA6ODIwMCIKZGlzYWJsZV9tbG9jayA9IHRydWUKbGljZW5zZV9wYXRoICA9ICIvdmF1bHQvbGljZW5zZS5oY2xpYyIKCnN0b3JhZ2UgInJhZnQiIHsKICAgIHBhdGggPSAiL3ZhdWx0L2RhdGEiCiAgICB2YXVsdF9ub2RlX25hbWUgPSAidmF1bHRfMSIgICAgICAgICAgICAjc2V0dGluZyB1cCBhIHVuaXF1ZSBub2RlX2lkIGZvciBlYWNoIHZhdWx0IG5vZGUKfQoKbGlzdGVuZXIgInRjcCIgewogIGFkZHJlc3MgICAgICAgPSAiMC4wLjAuMDo4MjAwIgogIHRsc19kaXNhYmxlICAgPSAxCn0K
+          - name: license
+            value: **omitted**
+          ports:
+          - containerPort: 8200
+            hostPort: 8200
+        volumes:
+        - name: vault-data
+          hostPath:
+            path: /mnt/data
+            type: DirectoryOrCreate   
+        restartPolicy: Never
+volumes:
+  test:
+    mount: "/mnt/data"
+    seed: "testing"
+auths:
+  {registry}:
+    password: {Registry-Password}
+    username: {Registry-User}
