@@ -1,0 +1,162 @@
+Mar 19 14:18:47 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:47.224Z [INFO]  core: security barrier not initialized
+Mar 19 14:18:47 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:47.225Z [INFO]  storage.raft: creating Raft: config="&raft.Config{ProtocolVersion:3, HeartbeatTimeout:5000000000, ElectionTimeout:5000000000, CommitTimeout:50000000, MaxAppendEntries:64, BatchApplyCh:true, ShutdownOnRemove:true, TrailingLogs:0x2800, SnapshotInterval:120000000000, SnapshotThreshold:0x2000, LeaderLeaseTimeout:2500000000, LocalID:\"89eff56c-c3b5-6d2d-ec55-b6d8228f141b\", NotifyCh:(chan<- bool)(0xc0003a6100), LogOutput:io.Writer(nil), LogLevel:\"DEBUG\", Logger:(*hclog.interceptLogger)(0xc003e8eed0), NoSnapshotRestoreOnStart:true, PreVoteDisabled:false, skipStartup:false}"
+Mar 19 14:18:47 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:47.226Z [INFO]  storage.raft: initial configuration: index=1 servers="[{Suffrage:Voter ID:89eff56c-c3b5-6d2d-ec55-b6d8228f141b Address:127.0.0.1:8201}]"
+Mar 19 14:18:47 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:47.226Z [INFO]  storage.raft: entering follower state: follower="Node at 89eff56c-c3b5-6d2d-ec55-b6d8228f141b [Follower]" leader-address= leader-id=
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.084Z [WARN]  storage.raft: heartbeat timeout reached, starting election: last-leader-addr= last-leader-id=
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.084Z [INFO]  storage.raft: entering candidate state: node="Node at 89eff56c-c3b5-6d2d-ec55-b6d8228f141b [Candidate]" term=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.084Z [INFO]  storage.raft: pre-vote successful, starting election: term=2 tally=1 refused=0 votesNeeded=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.086Z [INFO]  storage.raft: election won: term=2 tally=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.086Z [INFO]  storage.raft: entering leader state: leader="Node at 89eff56c-c3b5-6d2d-ec55-b6d8228f141b [Leader]"
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.124Z [INFO]  core: security barrier initialized: stored=1 shares=1 threshold=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.160Z [INFO]  core: post-unseal setup starting
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.176Z [INFO]  replication.wal: no log directories found: root=wal/logs/
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.178Z [INFO]  replication.index.perf: no index pages found
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.178Z [INFO]  replication.index.perf: no checkpoint found
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.178Z [INFO]  replication.index: no previous commit, forcing re-index: path-type=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.179Z [INFO]  replication.index.local: no index pages found
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.179Z [INFO]  replication.index.local: no checkpoint found
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.179Z [INFO]  replication.index: no previous commit, forcing re-index: path-type=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.184Z [INFO]  licensing: stored license removal was successful
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.205Z [INFO]  core: loaded wrapping token key
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.205Z [INFO]  core: successfully setup plugin runtime catalog
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.205Z [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.205Z [INFO]  core: no mounts; adding default mount table
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.213Z [INFO]  core: successfully mounted: type=cubbyhole version="v1.19.1+builtin.vault" path=cubbyhole/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.214Z [INFO]  core: successfully mounted: type=system version="v1.19.1+builtin.vault" path=sys/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.214Z [INFO]  core: successfully mounted: type=identity version="v1.19.1+builtin.vault" path=identity/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.229Z [INFO]  core: successfully mounted: type=token version="v1.19.1+builtin.vault" path=token/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.232Z [INFO]  rollback: Starting the rollback manager with 256 workers
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.232Z [INFO]  rollback: starting rollback manager
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.233Z [INFO]  core: restoring leases
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.233Z [INFO]  rotation-job-manager: starting rotation manager
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.233Z [INFO]  expiration: lease restore complete
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.237Z [INFO]  identity: entities restored
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.237Z [INFO]  identity: groups restored
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.237Z [INFO]  system.mfa: configurations restored
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.239Z [INFO]  core: stopping replication
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.239Z [INFO]  core: closed sync connection
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.239Z [INFO]  core: replication stopped
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.239Z [INFO]  core: setting up replication
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.239Z [ERROR] core: a merkle tree reindex is required before replication can be started
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.239Z [INFO]  core: running replication reindexing: diff=false force=false toggle replication=false no flush=false trees=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.244Z [INFO]  replication.index.reindex: set starting WAL: value=15
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.290Z [INFO]  replication.index.reindex: starting storage scan
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.291Z [INFO]  replication.index.reindex: key scanning complete: num_keys=18
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: performing first replay: lastWAL=18
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.wal: prepared to replay logs: diff=3 commit_index=15 last_index=18
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: locking tree
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: locked tree
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: performing second replay: lastWAL=18
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: committing trees
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: root hash verified
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.reindex: reindexing subtree: tree=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.perf.reindex.subtree: locking subtree
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.340Z [INFO]  replication.index.perf.reindex.subtree: locked subtree
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.364Z [INFO]  replication.index.reindex: done reindexing subtree: bad pages=0 tree=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.364Z [INFO]  replication.index.reindex: reindexing subtree: tree=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.364Z [INFO]  replication.index.local.reindex.subtree: locking subtree
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.364Z [INFO]  replication.index.local.reindex.subtree: locked subtree
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.387Z [INFO]  replication.index.reindex: done reindexing subtree: bad pages=0 tree=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.387Z [INFO]  replication.index.reindex: deleting reindex WAL: tree=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.390Z [INFO]  replication.index.reindex: deleting reindex WAL: tree=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.395Z [INFO]  core: replication reindex complete: fixed_pages=0
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.397Z [INFO]  core: replicated cluster information not found or disabled, not activating client
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.397Z [INFO]  core: replication setup finished
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.397Z [INFO]  core: usage gauge collection is disabled
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.400Z [INFO]  core: Recorded vault version: vault version=1.19.1 upgrade time="2025-03-19 18:18:53.397694725 +0000 UTC" build date=2025-03-06T18:16:09Z
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.400Z [WARN]  core: post-unseal upgrade seal keys failed: error="no recovery key found"
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.405Z [INFO]  core: post-unseal setup complete
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.459Z [INFO]  core: root token generated
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  core: pre-seal teardown starting
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  core: stopping raft active node
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  core: stopping replication
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  core: closed sync connection
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  core: replication stopped
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  core: shutting down census manager
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.464Z [INFO]  rollback: stopping rollback manager
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.465Z [INFO]  core: pre-seal teardown complete
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.465Z [INFO]  core: stored unseal keys supported, attempting fetch
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [INFO]  core.cluster-listener.tcp: starting listener: listener_address=0.0.0.0:8201
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=[::]:8201
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [INFO]  storage.raft: creating Raft: config="&raft.Config{ProtocolVersion:3, HeartbeatTimeout:15000000000, ElectionTimeout:15000000000, CommitTimeout:50000000, MaxAppendEntries:64, BatchApplyCh:true, ShutdownOnRemove:true, TrailingLogs:0x2800, SnapshotInterval:120000000000, SnapshotThreshold:0x2000, LeaderLeaseTimeout:2500000000, LocalID:\"89eff56c-c3b5-6d2d-ec55-b6d8228f141b\", NotifyCh:(chan<- bool)(0xc003924280), LogOutput:io.Writer(nil), LogLevel:\"DEBUG\", Logger:(*hclog.interceptLogger)(0xc003e8eed0), NoSnapshotRestoreOnStart:true, PreVoteDisabled:false, skipStartup:false}"
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [INFO]  storage.raft: initial configuration: index=1 servers="[{Suffrage:Voter ID:89eff56c-c3b5-6d2d-ec55-b6d8228f141b Address:127.0.0.1:8201}]"
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [INFO]  core: vault is unsealed
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [INFO]  core: unsealed with stored key
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.485Z [WARN]  core: attempted unseal with stored keys, but vault is already unsealed
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.486Z [INFO]  storage.raft: entering follower state: follower="Node at 127.0.0.1:8201 [Follower]" leader-address= leader-id=
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.486Z [WARN]  storage.raft: heartbeat timeout reached, starting election: last-leader-addr= last-leader-id=
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.486Z [INFO]  storage.raft: entering candidate state: node="Node at 127.0.0.1:8201 [Candidate]" term=3
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.486Z [INFO]  storage.raft: pre-vote successful, starting election: term=3 tally=1 refused=0 votesNeeded=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.486Z [INFO]  core: entering standby mode
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.486Z [INFO]  core: performance standby: forwarding client is nil, waiting for new leader
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.487Z [INFO]  storage.raft: election won: term=3 tally=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.487Z [INFO]  storage.raft: entering leader state: leader="Node at 127.0.0.1:8201 [Leader]"
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.490Z [INFO]  core: acquired lock, enabling active operation
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.527Z [INFO]  core: post-unseal setup starting
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.546Z [INFO]  replication.wal: wal range recovered: first_wal=1 last_wal=26
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.547Z [WARN]  replication.index.perf: unexpected number of index pages found: pages_restored=1 expect=256
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.547Z [INFO]  replication.index.perf: no checkpoint found
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.547Z [INFO]  replication.index: no previous commit, forcing re-index: path-type=1
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.549Z [WARN]  replication.index.local: unexpected number of index pages found: pages_restored=1 expect=256
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.549Z [INFO]  replication.index.local: no checkpoint found
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.549Z [INFO]  replication.index: no previous commit, forcing re-index: path-type=2
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.549Z [INFO]  replication.wal: prepared to replay logs: diff=26 commit_index=0 last_index=26
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.580Z [INFO]  replication.wal: log replay complete: replayed=26 commit_index=0 last_index=26
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.584Z [INFO]  licensing: stored license removal was successful
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.600Z [INFO]  core: loaded wrapping token key
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.600Z [INFO]  core: successfully setup plugin runtime catalog
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.600Z [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.602Z [INFO]  core: successfully mounted: type=system version="v1.19.1+builtin.vault" path=sys/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.603Z [INFO]  core: successfully mounted: type=identity version="v1.19.1+builtin.vault" path=identity/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.603Z [INFO]  core: successfully mounted: type=cubbyhole version="v1.19.1+builtin.vault" path=cubbyhole/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.604Z [INFO]  core: successfully mounted: type=token version="v1.19.1+builtin.vault" path=token/ namespace="ID: root. Path: "
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.604Z [INFO]  rollback: Starting the rollback manager with 256 workers
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.604Z [INFO]  rollback: starting rollback manager
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.604Z [INFO]  core: restoring leases
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.604Z [INFO]  rotation-job-manager: starting rotation manager
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.604Z [INFO]  expiration: lease restore complete
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.605Z [INFO]  identity: entities restored
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.605Z [INFO]  identity: groups restored
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.605Z [INFO]  system.mfa: configurations restored
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.605Z [INFO]  core: starting raft active node
+Mar 19 14:18:53 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.605Z [INFO]  storage.raft: starting autopilot: config="CleanupDeadServers:false LastContactThreshold:10s DeadServerLastContactThreshold:24h0m0s MaxTrailingLogs:1000 MinQuorum:0 ServerStabilizationTime:10s DisableUpgradeMigration:false RedundancyZoneTag:redundancy_zone UpgradeVersionTag:upgrade_version"
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: stopping replication
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: closed sync connection
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: replication stopped
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: setting up replication
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [ERROR] core: a merkle tree reindex is required before replication can be started
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: replication setup finished
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: reindex is running in background, replication will be started once reindex completes
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: running replication reindexing: diff=false force=false toggle replication=true no flush=false trees=2
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.609Z [INFO]  core: usage gauge collection is disabled
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.612Z [INFO]  replication.index.reindex: set starting WAL: value=27
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.625Z [INFO]  core: post-unseal setup complete
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.625Z [INFO]  core: performance standby: forwarding client is nil, waiting for new leader
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.661Z [INFO]  replication.index.reindex: starting storage scan
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.661Z [INFO]  replication.index.reindex: key scanning complete: num_keys=24
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: performing first replay: lastWAL=27
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: locking tree
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: locked tree
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: performing second replay: lastWAL=27
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: committing trees
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: root hash verified
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.reindex: reindexing subtree: tree=2
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.local.reindex.subtree: locking subtree
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.736Z [INFO]  replication.index.local.reindex.subtree: locked subtree
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.762Z [INFO]  replication.index.reindex: done reindexing subtree: bad pages=0 tree=2
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.762Z [INFO]  replication.index.reindex: reindexing subtree: tree=1
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.762Z [INFO]  replication.index.perf.reindex.subtree: locking subtree
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.762Z [INFO]  replication.index.perf.reindex.subtree: locked subtree
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.787Z [INFO]  replication.index.reindex: done reindexing subtree: bad pages=0 tree=1
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.787Z [INFO]  replication.index.reindex: deleting reindex WAL: tree=1
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.790Z [INFO]  replication.index.reindex: deleting reindex WAL: tree=2
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.794Z [INFO]  core: replication index repaired, starting replication
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.794Z [INFO]  core: stopping replication
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.794Z [INFO]  core: closed sync connection
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.794Z [INFO]  core: replication stopped
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.794Z [INFO]  core: setting up replication
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.794Z [INFO]  replication.index: clean merkle tree started
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.798Z [INFO]  core: replicated cluster information not found or disabled, not activating client
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.798Z [INFO]  core: replication setup finished
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.800Z [INFO]  replication.index: clean merkle tree complete: keys_cleaned=0
+Mar 19 14:18:54 zrhpkoso zcatvault-zcatvault[854262]: 2025-03-19T18:18:53.801Z [INFO]  core: replication reindex complete: fixed_pages=0

@@ -1,0 +1,60 @@
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator seal
+Success! Vault is sealed.
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator unseal
+Unseal Key (will be hidden): 
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       shamir
+Initialized              true
+Sealed                   true
+Total Recovery Shares    5
+Threshold                3
+Unseal Progress          1/3
+Unseal Nonce             d71cfdaa-8bbe-3e78-4388-811598e94bc3
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Removed From Cluster     false
+HA Enabled               true
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator unseal
+Unseal Key (will be hidden): 
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       shamir
+Initialized              true
+Sealed                   true
+Total Recovery Shares    5
+Threshold                3
+Unseal Progress          2/3
+Unseal Nonce             d71cfdaa-8bbe-3e78-4388-811598e94bc3
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Removed From Cluster     false
+HA Enabled               true
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator unseal
+Unseal Key (will be hidden): 
+Key                      Value
+---                      -----
+Seal Type                pkcs11
+Recovery Seal Type       shamir
+Initialized              true
+Sealed                   false
+Total Recovery Shares    5
+Threshold                3
+Version                  1.19.1+ent.hsm
+Build Date               2025-03-06T18:16:09Z
+Storage Type             raft
+Cluster Name             vault-cluster-c8c01c44
+Cluster ID               bcdf2373-95e7-3170-10d6-c45a5997b082
+Removed From Cluster     false
+HA Enabled               true
+HA Cluster               n/a
+HA Mode                  standby
+Active Node Address      <none>
+Raft Committed Index     179382
+Raft Applied Index       179382
+[root@zrhpgp11 vault-tutorial-onprem]# ./vault operator seal
+Success! Vault is sealed.
